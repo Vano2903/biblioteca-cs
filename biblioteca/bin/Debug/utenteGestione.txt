@@ -1,0 +1,48 @@
+utente:
+id
+email
+password
+registrationDate{
+    d
+    m
+    y
+}
+historianBooks[
+    isbn1
+    isgn2
+    isbn3
+]
+loans[
+    {
+        id,
+        customerId,
+        isbn,
+        loanDate:{
+            d
+            m
+            y
+        },
+        expectedReturnDate:{
+            d
+            m
+            y
+        },
+        returned,
+        renewal
+    }
+]
+sospensione{
+    {
+        d
+        m
+        y
+    },
+    permanent,
+    numDays
+}
+isUtente
+isPremium
+
+
+
+

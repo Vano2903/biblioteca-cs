@@ -1,0 +1,6 @@
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Release\biblioteca.csprojAssemblyReference.cache
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Release\biblioteca.Form1.resources
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Release\biblioteca.Form2.resources
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Release\biblioteca.Properties.Resources.resources
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Release\biblioteca.csproj.GenerateResource.cache
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Release\biblioteca.csproj.CoreCompileInputs.cache

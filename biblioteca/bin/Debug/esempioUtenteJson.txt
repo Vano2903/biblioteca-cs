@@ -1,0 +1,61 @@
+esempio:
+[
+    {
+        "id": "1",
+        "email": "davidevanoncini2003@gmail.com",
+        "password": "aaa", //una falla di sicurezza della madonna ma boh
+        "registrationDate":{
+            "d": "1",
+            "m": "2",
+            "y": "2021"
+        },
+        historianBooks:[
+            "isbn1",
+            "isbn2",
+            "isbn3"
+        ],
+        "loans":[
+            {
+                "id": "1",
+                "customerId": "1",
+                "isbn": "123123123",
+                "loanDate":{
+                    "d": "1",
+                    "m": "2",
+                    "y": "2021"
+                },
+                "expectedReturnDate":[
+                    {
+                        "d": "1",
+                        "m": "2",
+                        "y": "2021"
+                    },
+                    {
+                        "d": "2",
+                        "m": "3",
+                        "y": "2021"
+                    }
+                ],
+                "returnedDate":{
+                    "d": "4",
+                    "m": "3",
+                    "y": "2021"
+                }
+                "returned": "false",
+            }
+        ],
+        "suspension":[
+            {
+                "date":{
+                    "d": "1",
+                    "m": "2",
+                    "y": "2021"
+                }
+                "permanent": "false",
+                "numDays": "5"
+            }
+        ],
+        "isUtente":"false",
+        "isPremium": "true"
+    }
+]
