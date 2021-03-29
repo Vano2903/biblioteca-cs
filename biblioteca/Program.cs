@@ -12,6 +12,7 @@ namespace biblioteca
 
     static class Program
     {
+        public static List<Book> libri= new List<Book>();
         public static List<Utente> utenti = new List<Utente>();
         [STAThread]
         public static void CaricaUtenti()
@@ -25,6 +26,22 @@ namespace biblioteca
         public static void SalvaUtenti()
         {
             StreamWriter sw = new StreamWriter("utenti.json");
+            string json = JsonConvert.SerializeObject(Program.utenti);
+            sw.WriteLine(json);
+            sw.Close();
+        }
+
+        public static void CaricaLibri()
+        {
+            StreamReader sr = new StreamReader("libri.json");
+            string json = sr.ReadToEnd();
+            Program.utenti = JsonConvert.DeserializeObject<List<Utente>>(json);
+            sr.Close();
+        }
+
+        public static void SalvaLibri()
+        {
+            StreamWriter sw = new StreamWriter("libri.json");
             string json = JsonConvert.SerializeObject(Program.utenti);
             sw.WriteLine(json);
             sw.Close();

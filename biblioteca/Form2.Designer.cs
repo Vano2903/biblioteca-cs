@@ -34,6 +34,17 @@ namespace biblioteca
             System.Windows.Forms.Label label1;
             this.libro = new System.Windows.Forms.TabControl();
             this.insLibro = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.listISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listPublishingHouse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listLoanable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listPublishingYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listPremium = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listVal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listAuthors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listGenders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelGenders = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -47,7 +58,7 @@ namespace biblioteca
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panelPublishingYear = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.panelLoanable = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -68,18 +79,6 @@ namespace biblioteca
             this.delLibro = new System.Windows.Forms.TabPage();
             this.modLibro = new System.Windows.Forms.TabPage();
             this.contrPrestiti = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listPublishingHouse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listLoanable = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listPublishingYear = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listPremium = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listVal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listAuthors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listGenders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button2 = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             listBox1 = new System.Windows.Forms.ListBox();
             label1 = new System.Windows.Forms.Label();
@@ -90,6 +89,7 @@ namespace biblioteca
             this.panelPremium.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelPublishingYear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panelLoanable.SuspendLayout();
             this.panelPublishingHouse.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -107,6 +107,37 @@ namespace biblioteca
             label6.Size = new System.Drawing.Size(61, 15);
             label6.TabIndex = 22;
             label6.Text = "prestabile";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Items.AddRange(new object[] {
+            "ISBN",
+            "titolo ",
+            "casa produttrice",
+            "prestabile",
+            "anno di produzione",
+            "premium",
+            "valore",
+            "autori",
+            "generi"});
+            listBox1.Location = new System.Drawing.Point(35, 19);
+            listBox1.Name = "listBox1";
+            listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            listBox1.Size = new System.Drawing.Size(240, 69);
+            listBox1.TabIndex = 21;
+            listBox1.TabStop = false;
+            listBox1.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(33, 3);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(70, 13);
+            label1.TabIndex = 20;
+            label1.Text = "tipo di ricerca";
+            label1.Visible = false;
             // 
             // libro
             // 
@@ -144,6 +175,73 @@ namespace biblioteca
             this.insLibro.Size = new System.Drawing.Size(788, 421);
             this.insLibro.TabIndex = 0;
             this.insLibro.Text = "inserisci libro";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(278, 372);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(240, 45);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "pulisci ricerca";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listISBN,
+            this.listTitle,
+            this.listPublishingHouse,
+            this.listLoanable,
+            this.listPublishingYear,
+            this.listPremium,
+            this.listVal,
+            this.listAuthors,
+            this.listGenders});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(295, 22);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(485, 313);
+            this.listView1.TabIndex = 29;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // listISBN
+            // 
+            this.listISBN.Text = "ISBN";
+            // 
+            // listTitle
+            // 
+            this.listTitle.Text = "titolo";
+            // 
+            // listPublishingHouse
+            // 
+            this.listPublishingHouse.Text = "casa produttrice";
+            // 
+            // listLoanable
+            // 
+            this.listLoanable.Text = "prestabile";
+            // 
+            // listPublishingYear
+            // 
+            this.listPublishingYear.Text = "anno produzione";
+            // 
+            // listPremium
+            // 
+            this.listPremium.Text = "premium";
+            // 
+            // listVal
+            // 
+            this.listVal.Text = "valore";
+            // 
+            // listAuthors
+            // 
+            this.listAuthors.Text = "autori";
+            // 
+            // listGenders
+            // 
+            this.listGenders.Text = "generi";
             // 
             // panelGenders
             // 
@@ -256,19 +354,24 @@ namespace biblioteca
             // 
             // panelPublishingYear
             // 
-            this.panelPublishingYear.Controls.Add(this.textBox5);
+            this.panelPublishingYear.Controls.Add(this.numericUpDown1);
             this.panelPublishingYear.Controls.Add(this.label7);
             this.panelPublishingYear.Location = new System.Drawing.Point(35, 218);
             this.panelPublishingYear.Name = "panelPublishingYear";
             this.panelPublishingYear.Size = new System.Drawing.Size(239, 29);
             this.panelPublishingYear.TabIndex = 25;
             // 
-            // textBox5
+            // numericUpDown1
             // 
-            this.textBox5.Location = new System.Drawing.Point(139, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(90, 20);
-            this.textBox5.TabIndex = 23;
+            this.numericUpDown1.Location = new System.Drawing.Point(139, 4);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(90, 20);
+            this.numericUpDown1.TabIndex = 31;
             // 
             // label7
             // 
@@ -406,38 +509,6 @@ namespace biblioteca
             this.numericUpDownIL.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownIL.TabIndex = 9;
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Items.AddRange(new object[] {
-            "ISBN",
-            "titolo ",
-            "casa produttrice",
-            "prestabile",
-            "anno di produzione",
-            "premium",
-            "valore",
-            "autori",
-            "generi"});
-            listBox1.Location = new System.Drawing.Point(35, 19);
-            listBox1.Name = "listBox1";
-            listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            listBox1.Size = new System.Drawing.Size(240, 69);
-            listBox1.TabIndex = 21;
-            listBox1.TabStop = false;
-            listBox1.Visible = false;
-            listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(33, 3);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(70, 13);
-            label1.TabIndex = 20;
-            label1.Text = "tipo di ricerca";
-            label1.Visible = false;
-            // 
             // logoutButton
             // 
             this.logoutButton.Location = new System.Drawing.Point(641, 372);
@@ -457,6 +528,7 @@ namespace biblioteca
             this.button1.TabIndex = 17;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // delLibro
             // 
@@ -486,78 +558,6 @@ namespace biblioteca
             this.contrPrestiti.Text = "controllo prestiti";
             this.contrPrestiti.UseVisualStyleBackColor = true;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.listISBN,
-            this.listTitle,
-            this.listPublishingHouse,
-            this.listLoanable,
-            this.listPublishingYear,
-            this.listLocation,
-            this.listPremium,
-            this.listVal,
-            this.listAuthors,
-            this.listGenders});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(295, 22);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(485, 313);
-            this.listView1.TabIndex = 29;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // listISBN
-            // 
-            this.listISBN.Text = "ISBN";
-            // 
-            // listTitle
-            // 
-            this.listTitle.Text = "titolo";
-            // 
-            // listPublishingHouse
-            // 
-            this.listPublishingHouse.Text = "casa produttrice";
-            // 
-            // listLoanable
-            // 
-            this.listLoanable.Text = "prestabile";
-            // 
-            // listPublishingYear
-            // 
-            this.listPublishingYear.Text = "anno produzione";
-            // 
-            // listLocation
-            // 
-            this.listLocation.Text = "locazione";
-            // 
-            // listPremium
-            // 
-            this.listPremium.Text = "premium";
-            // 
-            // listVal
-            // 
-            this.listVal.Text = "valore";
-            // 
-            // listAuthors
-            // 
-            this.listAuthors.Text = "autori";
-            // 
-            // listGenders
-            // 
-            this.listGenders.Text = "generi";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(278, 372);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(240, 45);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "pulisci ricerca";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,6 +580,7 @@ namespace biblioteca
             this.panel6.PerformLayout();
             this.panelPublishingYear.ResumeLayout(false);
             this.panelPublishingYear.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panelLoanable.ResumeLayout(false);
             this.panelLoanable.PerformLayout();
             this.panelPublishingHouse.ResumeLayout(false);
@@ -617,7 +618,6 @@ namespace biblioteca
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelPublishingYear;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelLoanable;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -639,11 +639,11 @@ namespace biblioteca
         private System.Windows.Forms.ColumnHeader listPublishingHouse;
         private System.Windows.Forms.ColumnHeader listLoanable;
         private System.Windows.Forms.ColumnHeader listPublishingYear;
-        private System.Windows.Forms.ColumnHeader listLocation;
         private System.Windows.Forms.ColumnHeader listPremium;
         private System.Windows.Forms.ColumnHeader listVal;
         private System.Windows.Forms.ColumnHeader listAuthors;
         private System.Windows.Forms.ColumnHeader listGenders;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

@@ -102,18 +102,7 @@ namespace biblioteca {
             return elements;
         }
       */
-        private void cleanPanels()
-        {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            comboBox1.Text = "";
-            textBox5.Text = "";
-            comboBox2.Text = "";
-            textBox7.Text = "";
-            numericUpDownIL.Text = "0.00";
-            //hideAllPanels();
-        }
+        
 
         private void showElements(int i)
         {
@@ -175,15 +164,14 @@ namespace biblioteca {
             panelGenders.Show();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //private void listBox1_SelectedIndexChanged(object sender, EventArgs e){
             //MessageBox.Show("hai cliccato");
             //List<int> elements = selectedListBoxElements();
             //foreach (var index in elements)
             //{
             //    showElements(index);
             //}
-        }
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -195,6 +183,87 @@ namespace biblioteca {
             this.Hide();
             Form1 accesso = new Form1();
             accesso.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && numericUpDownIL.Value > 0 
+                && comboBox1.Text != "" && comboBox2.Text != "" && numericUpDown1.Value > 0 
+                && textBox9.Text != "" && textBox10.Text != "")
+                {
+                    addBook();
+                    showBooks();
+                    cleanPanels();
+                }
+                else MessageBox.Show("Campi incompleti");
+            
+        }
+        private void ResizeListView1Columns()
+        {
+            foreach (ColumnHeader column in listView1.Columns)
+            {
+                column.Width = -2;
+            }
+        }
+        private void showBooks()
+        {
+            listView1.Items.Clear();
+            //listView2.Items.Clear();
+            //listView3.Items.Clear();
+            foreach (Book b in Program.libri)
+            {
+                string authors = string.Join(";", b.authors);
+                string genders = string.Join(";", b.genders);
+                string[] array = { b.ISBN, b.title, b.publishingHouse, b.loanable.ToString(), b.publishingYear.ToString(),
+                b.premium.ToString(), b.val.ToString(), genders, authors};
+
+                listView1.Items.Add(new ListViewItem(array));
+                //listView2.Items.Add(new ListViewItem(array));
+                //listView3.Items.Add(new ListViewItem(array));
+            };
+                ResizeListView1Columns();
+            }
+        
+
+        
+
+        private void addBook()
+        {
+            List<string> agenders = getAllGenders();
+            List<string> aauthors = getAllAuthors();
+           // bool loanable;
+           // bool premium;
+            //comboBox1.Text == "falso" ?  false : true;
+            //comboBox2.Text == "falso" ? false : true;
+            Book nuovolibro = new Book(textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text == "falso" ? false : true, 
+                int.Parse(numericUpDown1.Text), comboBox2.Text == "falso" ? false : true,
+                float.Parse(numericUpDownIL.Text), agenders, aauthors);
+            Program.libri.Add(nuovolibro);
+        }
+        private List<string> getAllGenders()
+        {
+            List<string> genders = new List<string>();
+            genders = textBox10.Text.Split(';').ToList();
+            return genders;
+        }
+        private List<string> getAllAuthors()
+        {
+            List<string> authors = new List<string>();
+            authors = textBox9.Text.Split(';').ToList();
+            return authors;
+        }
+        private void cleanPanels()
+        {
+            textBox1.Text = ""; //ISBN;
+            textBox2.Text = ""; //title;
+            textBox3.Text = ""; //publishingHouse
+            comboBox1.Text = ""; //loanable
+            numericUpDown1.Text = "0"; //publishingYear
+            comboBox2.Text = ""; //premium
+            numericUpDownIL.Text = "0.00"; //val
+            textBox9.Text = ""; //authors
+            textBox10.Text = ""; //genders
+            //hideAllPanels();
         }
     }
 }
