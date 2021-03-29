@@ -9,16 +9,17 @@ namespace biblioteca
 {
     class Book
     {
-        private string ISBN;
-        private string title;
-        private string publishingHouse;
+        
+        public string ISBN;
+        public string title;
+        public string publishingHouse;
         //private bool loanable;
-        private Data publishingData;
-        private Location location;
-        private bool premium;
-        private float val;
-        private List<string> autors = new List<string>();
-        private List<string> genders = new List<string>();
+        public int publishingYear;
+        public Location location;
+        public bool premium;
+        public float val;
+        public List<string> authors = new List<string>();
+        public List<string> genders = new List<string>();
     }
 
 

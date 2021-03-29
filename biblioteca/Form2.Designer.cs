@@ -29,6 +29,7 @@ namespace biblioteca
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.Label label6;
             this.libro = new System.Windows.Forms.TabControl();
             this.insLibro = new System.Windows.Forms.TabPage();
@@ -77,7 +78,7 @@ namespace biblioteca
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelPremium = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             label6 = new System.Windows.Forms.Label();
             this.libro.SuspendLayout();
@@ -92,7 +93,7 @@ namespace biblioteca
             this.panelAuthors.SuspendLayout();
             this.panelGenders.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelPremium.SuspendLayout();
             this.SuspendLayout();
             // 
             // libro
@@ -112,7 +113,7 @@ namespace biblioteca
             this.insLibro.BackColor = System.Drawing.Color.Transparent;
             this.insLibro.Controls.Add(this.panelGenders);
             this.insLibro.Controls.Add(this.panelAuthors);
-            this.insLibro.Controls.Add(this.panel5);
+            this.insLibro.Controls.Add(this.panelPremium);
             this.insLibro.Controls.Add(this.panelPublishingData);
             this.insLibro.Controls.Add(this.panelLoanable);
             this.insLibro.Controls.Add(this.panelPublishingHouse);
@@ -130,7 +131,7 @@ namespace biblioteca
             this.insLibro.Size = new System.Drawing.Size(788, 421);
             this.insLibro.TabIndex = 0;
             this.insLibro.Text = "inserisci libro";
-            this.insLibro.Click += new System.EventHandler(this.insLibro_Click);
+//            this.insLibro.Click += new System.EventHandler(this.insLibro_Click);
             // 
             // listBox1
             // 
@@ -141,7 +142,6 @@ namespace biblioteca
             "casa produttrice",
             "prestabile",
             "anno di produzione",
-            "locazione",
             "premium",
             "valore",
             "autori",
@@ -152,6 +152,7 @@ namespace biblioteca
             this.listBox1.Size = new System.Drawing.Size(240, 69);
             this.listBox1.TabIndex = 21;
             this.listBox1.TabStop = false;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -170,6 +171,7 @@ namespace biblioteca
             this.logoutButton.TabIndex = 18;
             this.logoutButton.Text = "log Out";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // button1
             // 
@@ -192,6 +194,8 @@ namespace biblioteca
             // 
             // listView1
             // 
+            this.listView1.AllowDrop = true;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.listISBN,
             this.listTitle,
@@ -203,7 +207,13 @@ namespace biblioteca
             this.listVal,
             this.listAuthors,
             this.listGenders});
+            this.listView1.GridLines = true;
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "listViewGroup1";
+            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1});
             this.listView1.HideSelection = false;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listView1.Location = new System.Drawing.Point(311, 30);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(470, 277);
@@ -521,15 +531,15 @@ namespace biblioteca
             this.textBox7.Size = new System.Drawing.Size(90, 20);
             this.textBox7.TabIndex = 23;
             // 
-            // panel5
+            // panelPremium
             // 
-            this.panel5.Controls.Add(this.comboBox2);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(35, 249);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(239, 29);
-            this.panel5.TabIndex = 25;
+            this.panelPremium.Controls.Add(this.comboBox2);
+            this.panelPremium.Controls.Add(this.panel6);
+            this.panelPremium.Controls.Add(this.label8);
+            this.panelPremium.Location = new System.Drawing.Point(35, 249);
+            this.panelPremium.Name = "panelPremium";
+            this.panelPremium.Size = new System.Drawing.Size(239, 29);
+            this.panelPremium.TabIndex = 25;
             // 
             // comboBox2
             // 
@@ -573,8 +583,8 @@ namespace biblioteca
             this.panelGenders.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelPremium.ResumeLayout(false);
+            this.panelPremium.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -608,7 +618,7 @@ namespace biblioteca
         private System.Windows.Forms.Panel panelAuthors;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelPremium;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;

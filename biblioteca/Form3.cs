@@ -21,5 +21,12 @@ namespace biblioteca
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 accesso = new Form1();
+            accesso.Show();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 /*TODO 
  * condizioni password 
@@ -65,15 +66,19 @@ namespace biblioteca {
                             found = true;
                             if (utente.getIsUtente() == true)
                             {
-                                this.Hide();
+                                
+                                Hide();
                                 Form3 utent = new Form3();
                                 utent.Show();
+                                break;
                             }
                             else
                             {
-                                this.Hide();
-                                Form2 bibliotecario = new Form2();
-                                bibliotecario.Show();
+                                
+                                Hide();
+                                Form2 b = new Form2();
+                                b.Show();
+                                break;
                             }
                         }
                     }
