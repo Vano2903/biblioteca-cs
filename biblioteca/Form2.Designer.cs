@@ -30,6 +30,8 @@ namespace biblioteca
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label6;
+            System.Windows.Forms.ListBox listBox1;
+            System.Windows.Forms.Label label1;
             this.libro = new System.Windows.Forms.TabControl();
             this.insLibro = new System.Windows.Forms.TabPage();
             this.panelGenders = new System.Windows.Forms.Panel();
@@ -61,8 +63,6 @@ namespace biblioteca
             this.panelVal = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownIL = new System.Windows.Forms.NumericUpDown();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.delLibro = new System.Windows.Forms.TabPage();
@@ -79,7 +79,10 @@ namespace biblioteca
             this.listVal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listAuthors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listGenders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
+            listBox1 = new System.Windows.Forms.ListBox();
+            label1 = new System.Windows.Forms.Label();
             this.libro.SuspendLayout();
             this.insLibro.SuspendLayout();
             this.panelGenders.SuspendLayout();
@@ -120,6 +123,7 @@ namespace biblioteca
             // insLibro
             // 
             this.insLibro.BackColor = System.Drawing.Color.Transparent;
+            this.insLibro.Controls.Add(this.button2);
             this.insLibro.Controls.Add(this.listView1);
             this.insLibro.Controls.Add(this.panelGenders);
             this.insLibro.Controls.Add(this.panelAuthors);
@@ -130,8 +134,8 @@ namespace biblioteca
             this.insLibro.Controls.Add(this.panelTitle);
             this.insLibro.Controls.Add(this.panelISBN);
             this.insLibro.Controls.Add(this.panelVal);
-            this.insLibro.Controls.Add(this.listBox1);
-            this.insLibro.Controls.Add(this.label1);
+            this.insLibro.Controls.Add(listBox1);
+            this.insLibro.Controls.Add(label1);
             this.insLibro.Controls.Add(this.logoutButton);
             this.insLibro.Controls.Add(this.button1);
             this.insLibro.Location = new System.Drawing.Point(4, 22);
@@ -404,8 +408,8 @@ namespace biblioteca
             // 
             // listBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            listBox1.FormattingEnabled = true;
+            listBox1.Items.AddRange(new object[] {
             "ISBN",
             "titolo ",
             "casa produttrice",
@@ -415,34 +419,38 @@ namespace biblioteca
             "valore",
             "autori",
             "generi"});
-            this.listBox1.Location = new System.Drawing.Point(35, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(240, 69);
-            this.listBox1.TabIndex = 21;
-            this.listBox1.TabStop = false;
+            listBox1.Location = new System.Drawing.Point(35, 19);
+            listBox1.Name = "listBox1";
+            listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            listBox1.Size = new System.Drawing.Size(240, 69);
+            listBox1.TabIndex = 21;
+            listBox1.TabStop = false;
+            listBox1.Visible = false;
+            listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "tipo di ricerca";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(33, 3);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(70, 13);
+            label1.TabIndex = 20;
+            label1.Text = "tipo di ricerca";
+            label1.Visible = false;
             // 
             // logoutButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(641, 366);
+            this.logoutButton.Location = new System.Drawing.Point(641, 372);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(140, 54);
+            this.logoutButton.Size = new System.Drawing.Size(140, 48);
             this.logoutButton.TabIndex = 18;
             this.logoutButton.Text = "log Out";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 376);
+            this.button1.Location = new System.Drawing.Point(34, 372);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(240, 45);
@@ -539,6 +547,17 @@ namespace biblioteca
             // 
             this.listGenders.Text = "generi";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(278, 372);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(240, 45);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "pulisci ricerca";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,8 +605,6 @@ namespace biblioteca
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown numericUpDownIL;
         private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelGenders;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label12;
@@ -627,5 +644,6 @@ namespace biblioteca
         private System.Windows.Forms.ColumnHeader listVal;
         private System.Windows.Forms.ColumnHeader listAuthors;
         private System.Windows.Forms.ColumnHeader listGenders;
+        private System.Windows.Forms.Button button2;
     }
 }

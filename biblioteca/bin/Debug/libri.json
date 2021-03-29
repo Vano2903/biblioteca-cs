@@ -1,0 +1,122 @@
+[
+	{
+		"ISBN": "978-88-235-0503-2",
+		"title": "Storia di una lumaca che scopri' l'importanza della lentezza",
+		"publishingHouse": "GUANDA",
+		"loanable": true,
+		"publishingYear": 2013,
+		"premium": false,
+		"val": 10.00,
+		"authors": [
+			"Luis Sepulveda"
+		],
+		"genders": [
+			"Narrativa"
+		]
+	},
+	{
+		"ISBN": "978-88-522-1803-3",
+		"title": "Le piu' belle storie Disney - Antica Roma",
+		"publishingHouse": "Disney Libri",
+		"loanable": true,
+		"publishingYear": 2015,
+		"premium": false,
+		"val": 6.90,
+		"authors": [
+			"Max Monteduro",
+			"Andrea Freccero",
+			"Alessandro Sisti",
+			"Giorgio Cavazzano",
+			"Paolo Mottura",
+			"Nino Russo",
+			"Roberto Marini",
+			"Lino Gorlero",
+			"Giorgio Pezzin",
+			"Massimo De Vita",
+			"Rodolfo Cimino",
+			"Tom Anderson",
+			"Vicar",
+			"Giorgio Figus"
+		],
+		"genders": [
+			"Rivista",
+			"Fumetti"
+		]
+	},
+	{
+		"ISBN": "978-88-89249-46-8",
+		"title": "Testi della gara Kangourou della Matematica - Edizione 2016",
+		"publishingHouse": "Kangourou Italia",
+		"loanable": false,
+		"publishingYear": 2016,
+		"premium": true,
+		"val": 4.50,
+		"authors": [
+			"Tobia Rava'",
+			"A. Arosio",
+			"l. Capelli",
+			"S. De Stefano",
+			"G. L. Forti",
+			"M. Gobbino",
+			"A. Lissoni",
+			"E. Maluta",
+			"A. Rossi",
+			"C. Zanco"
+		],
+		"genders": [
+			"Rivista"
+		]
+	},
+	{
+		"ISBN": "978-88-09-81027-1",
+		"title": "Wonder",
+		"publishingHouse": "Giunti",
+		"loanable": true,
+		"publishingYear": 2012,
+		"premium": false,
+		"val": 10.00,
+		"authors": [
+			"Raquel Jaramillo Palacio"
+		],
+		"genders": [
+			"Romanzo",
+			"Letteratura per ragazzi",
+			"Narrativa"
+		]
+		},
+		{
+		"ISBN": "977-1828552392-90001",
+		"title": "Sherlock, Lupin & Io - Il Trio della Dama Nera",
+		"publishingHouse": "PIEMME",
+		"loanable": true,
+		"publishingYear": 2011,
+		"premium": false,
+		"val": 6.90,
+		"authors": [
+			"Iren Adler"
+		],
+		"genders": [
+			"Romanzo",
+			"Letteratura per ragazzi",
+			"Narrativa"
+		]
+	},
+		{
+		"ISBN": "978-88-09-88163-1",
+		"title": "Mi Chiamo Chuck - Ho diciassette anni e, stando a wikipedia, soffro di un distrurbo ossessivo-compulsivo.",
+		"publishingHouse": "Giunti",
+		"loanable": true,
+		"publishingYear": 2012,
+		"premium": false,
+		"val": 7.90,
+		"authors": [
+			"Aaron Karo"
+		],
+		"genders": [
+			"Romanzo"
+			"Romanzo straniero",
+			"Letteratura per ragazzi",
+			"Narrativa"
+		]
+	}
+]
