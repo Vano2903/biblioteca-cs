@@ -2,6 +2,7 @@
 biblioteca compito per informatica
 
 richieste:
+
 Si richiede l'applicazione per la simulazione di una biblioteca:
 - gestione del parco libri (aggiungo libro, tolgo, libro, aggiorno prezzo,...)
 - gestione dei prestiti di libri (ricerca, presa in prestito o prenotazione)
