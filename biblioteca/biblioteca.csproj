@@ -99,6 +99,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBibliotecario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBibliotecario.Designer.cs">
+      <DependentUpon>FormBibliotecario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loan.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Program.cs" />
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBibliotecario.resx">
+      <DependentUpon>FormBibliotecario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -31,3 +31,4 @@ C:\Users\vano\Desktop\c#\biblioteca\biblioteca\bin\Debug\System.Threading.Tasks.
 C:\Users\vano\Desktop\c#\biblioteca\biblioteca\bin\Debug\System.ValueTuple.xml
 C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Debug\biblioteca.csproj.CopyComplete
 C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Debug\biblioteca.Form3.resources
+C:\Users\vano\Desktop\c#\biblioteca\biblioteca\obj\Debug\biblioteca.FormBibliotecario.resources

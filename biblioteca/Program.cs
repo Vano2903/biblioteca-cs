@@ -13,9 +13,7 @@ namespace biblioteca
     static class Program
     {
         public static List<Utente> utenti = new List<Utente>();
-            [STAThread]
-
-
+        [STAThread]
         public static void CaricaUtenti()
         {
             StreamReader sr = new StreamReader("utenti.json");

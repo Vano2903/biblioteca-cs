@@ -21,7 +21,7 @@ namespace biblioteca {
 
         }
 
-
+        
         private void logoutButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -88,7 +88,7 @@ namespace biblioteca {
                     panelLoanable.Show();
                     break;
                 case 4:
-                    panelPublishingData.Show();
+                    panelPublishingYear.Show();
                     break;
                 case 5:
                     panelPremium.Show();
@@ -117,5 +117,6 @@ namespace biblioteca {
 
             }
         }
+        
     }
 }
